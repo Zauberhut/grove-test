@@ -1,4 +1,5 @@
 grove.onGesture(GroveGesture.Right, function () {
+    radio.sendString("rechts")
     basic.showLeds(`
         . . # . .
         . . . # .
@@ -8,6 +9,7 @@ grove.onGesture(GroveGesture.Right, function () {
         `)
 })
 grove.onGesture(GroveGesture.Up, function () {
+    radio.sendString("rauf")
     basic.showLeds(`
         . . # . .
         . # . # .
@@ -17,6 +19,7 @@ grove.onGesture(GroveGesture.Up, function () {
         `)
 })
 grove.onGesture(GroveGesture.Down, function () {
+    radio.sendString("runter")
     basic.showLeds(`
         . . . . .
         . . . . .
@@ -28,9 +31,9 @@ grove.onGesture(GroveGesture.Down, function () {
 grove.onGesture(GroveGesture.Forward, function () {
     basic.showLeds(`
         . . . . .
+        . . . . .
         . . # . .
-        . # # # .
-        . . # . .
+        . . . . .
         . . . . .
         `)
     basic.showLeds(`
@@ -49,6 +52,7 @@ grove.onGesture(GroveGesture.Forward, function () {
         `)
 })
 grove.onGesture(GroveGesture.Left, function () {
+    radio.sendString("links")
     basic.showLeds(`
         . . # . .
         . # . . .
@@ -74,13 +78,11 @@ grove.onGesture(GroveGesture.Backward, function () {
         `)
     basic.showLeds(`
         . . . . .
+        . . . . .
         . . # . .
-        . # # # .
-        . . # . .
+        . . . . .
         . . . . .
         `)
 })
 grove.initGesture()
-basic.forever(function () {
-	
-})
+radio.setGroup(1)

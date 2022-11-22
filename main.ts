@@ -18,6 +18,16 @@ grove.onGesture(GroveGesture.Up, function () {
         . . . . .
         `)
 })
+input.onButtonPressed(Button.A, function () {
+    radio.sendString("links")
+    basic.showLeds(`
+        . . # . .
+        . # . . .
+        # . . . .
+        . # . . .
+        . . # . .
+        `)
+})
 grove.onGesture(GroveGesture.Down, function () {
     radio.sendString("runter")
     basic.showLeds(`
@@ -63,16 +73,6 @@ grove.onGesture(GroveGesture.Left, function () {
 })
 radio.onReceivedString(function (receivedString) {
     if (receivedString == "rauf") {
-        music.playSoundEffect(music.createSoundEffect(
-        WaveShape.Square,
-        161,
-        3029,
-        255,
-        255,
-        1000,
-        SoundExpressionEffect.None,
-        InterpolationCurve.Curve
-        ), SoundExpressionPlayMode.InBackground)
         basic.showLeds(`
             . . # . .
             . # . # .
@@ -81,16 +81,6 @@ radio.onReceivedString(function (receivedString) {
             . . . . .
             `)
     } else if (receivedString == "runter") {
-        music.playSoundEffect(music.createSoundEffect(
-        WaveShape.Square,
-        3175,
-        72,
-        255,
-        255,
-        1000,
-        SoundExpressionEffect.None,
-        InterpolationCurve.Curve
-        ), SoundExpressionPlayMode.InBackground)
         basic.showLeds(`
             . . . . .
             . . . . .
@@ -119,6 +109,16 @@ radio.onReceivedString(function (receivedString) {
     } else {
         basic.showIcon(IconNames.Ghost)
     }
+})
+input.onButtonPressed(Button.B, function () {
+    radio.sendString("rechts")
+    basic.showLeds(`
+        . . # . .
+        . . . # .
+        . . . . #
+        . . . # .
+        . . # . .
+        `)
 })
 grove.onGesture(GroveGesture.Backward, function () {
     basic.showLeds(`

@@ -96,9 +96,7 @@ radio.onReceivedString(function (receivedString) {
             . # . . .
             . . # . .
             `)
-        music.playMelody("A F E F D G E F ", 400)
     } else if (receivedString == "rechts") {
-        music.playMelody("G B A G C5 B A B ", 400)
         basic.showLeds(`
             . . # . .
             . . . # .
@@ -107,7 +105,7 @@ radio.onReceivedString(function (receivedString) {
             . . # . .
             `)
     } else {
-        basic.showIcon(IconNames.Ghost)
+    	
     }
 })
 input.onButtonPressed(Button.B, function () {
@@ -143,6 +141,5 @@ grove.onGesture(GroveGesture.Backward, function () {
         . . . . .
         `)
 })
-music.playTone(262, music.beat(BeatFraction.Whole))
 grove.initGesture()
 radio.setGroup(1)
